@@ -1,13 +1,8 @@
 class Solution:
     def hasAllCodes(self, s: str, k: int) -> bool:
-        if len(s) < k:
-            return False
-        
-        seen = set()
-        
+        st = set()
+
         for i in range(len(s) - k + 1):
-            seen.add(s[i:i+k])
-            if len(seen) == 2 ** k:
-                return True
-        
-        return len(seen) == 2 ** k
+            st.add(s[i:i+k])
+
+        return len(st) == 2**k
